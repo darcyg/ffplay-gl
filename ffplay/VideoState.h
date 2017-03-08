@@ -1,11 +1,14 @@
 #ifndef VIDEO_STATE_H
 #define VIDEO_STATE_H
 
-extern "C" {
-#include "libavformat/avformat.h"
-}
 #include <thread>
 #include <condition_variable>
+
+
+extern "C" {
+    #include "libavformat/avformat.h"
+}
+
 
 using std::thread;
 using std::condition_variable;
@@ -14,8 +17,9 @@ class VideoState
 {
 public:
 	int read_thread();
-
+    int stream_component_open(int stream_index);
 	thread read_thread;
+    
     AVInputFormat *iformat;
     int abort_request;
     int force_refresh;
@@ -28,23 +32,19 @@ public:
     int64_t seek_rel;
     int read_pause_return;
     AVFormatContext *ic;
+    
+    /*是否流媒体流*/
     int realtime;
 
     Clock audclk;
     Clock vidclk;
-    Clock extclk;
 
     FrameQueue pictq;
-    FrameQueue subpq;
     FrameQueue sampq;
 
     Decoder auddec;
     Decoder viddec;
-    Decoder subdec;
 
-    int audio_stream;
-
-    int av_sync_type;
 
     double audio_clock;
     int audio_clock_serial;
@@ -75,7 +75,7 @@ public:
     int16_t sample_array[SAMPLE_ARRAY_SIZE];
     int sample_array_index;
     int last_i_start;
-    RDFTContext *rdft;
+
     int rdft_bits;
     FFTSample *rdft_data;
     int xpos;
@@ -83,25 +83,18 @@ public:
     SDL_Texture *vis_texture;
     SDL_Texture *sub_texture;
 
-    int subtitle_stream;
-    AVStream *subtitle_st;
-    PacketQueue subtitleq;
 
     double frame_timer;
     double frame_last_returned_time;
     double frame_last_filter_delay;
-    int video_stream;
     AVStream *video_st;
     PacketQueue videoq;
-    double max_frame_duration;      // maximum duration of a frame - above this, we consider the jump a timestamp discontinuity
-    struct SwsContext *img_convert_ctx;
-    struct SwsContext *sub_convert_ctx;
+    
     int eof;
 
     char *filename;
     int width, height, xleft, ytop;
     int step;
-    int last_video_stream, last_audio_stream, last_subtitle_stream;
     condition_variable continue_read_thread;
 };
 
