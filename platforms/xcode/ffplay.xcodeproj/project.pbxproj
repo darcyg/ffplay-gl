@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		156E696E1E70244F003D1A2E /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 156E696D1E70244F003D1A2E /* Utils.cpp */; };
 		15DDC5D11E6D28F2009D1B60 /* Clock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DDC5C41E6D28F2009D1B60 /* Clock.cpp */; };
 		15DDC5D21E6D28F2009D1B60 /* Decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DDC5C61E6D28F2009D1B60 /* Decoder.cpp */; };
 		15DDC5D31E6D28F2009D1B60 /* Frame.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 15DDC5C81E6D28F2009D1B60 /* Frame.cpp */; };
@@ -29,6 +30,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		156E696C1E702411003D1A2E /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		156E696D1E70244F003D1A2E /* Utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Utils.cpp; sourceTree = "<group>"; };
 		15DDC5B91E6D2895009D1B60 /* ffplay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ffplay; sourceTree = BUILT_PRODUCTS_DIR; };
 		15DDC5C41E6D28F2009D1B60 /* Clock.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Clock.cpp; sourceTree = "<group>"; };
 		15DDC5C51E6D28F2009D1B60 /* Clock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Clock.h; sourceTree = "<group>"; };
@@ -88,6 +91,8 @@
 				15DDC5CE1E6D28F2009D1B60 /* PacketQueue.h */,
 				15DDC5CF1E6D28F2009D1B60 /* VideoState.cpp */,
 				15DDC5D01E6D28F2009D1B60 /* VideoState.h */,
+				156E696C1E702411003D1A2E /* Utils.h */,
+				156E696D1E70244F003D1A2E /* Utils.cpp */,
 			);
 			name = ffplay;
 			path = ../../ffplay;
@@ -153,6 +158,7 @@
 				15DDC5D31E6D28F2009D1B60 /* Frame.cpp in Sources */,
 				15DDC5D71E6D28F2009D1B60 /* VideoState.cpp in Sources */,
 				15DDC5D21E6D28F2009D1B60 /* Decoder.cpp in Sources */,
+				156E696E1E70244F003D1A2E /* Utils.cpp in Sources */,
 				15DDC5D11E6D28F2009D1B60 /* Clock.cpp in Sources */,
 				15DDC5D51E6D28F2009D1B60 /* main.cpp in Sources */,
 				15DDC5D41E6D28F2009D1B60 /* FrameQueue.cpp in Sources */,
